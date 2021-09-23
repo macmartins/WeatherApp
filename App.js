@@ -1,21 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Appbar, Text } from "react-native-paper";
+import CountryList from "./CountryList";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <div>
+      <Appbar>
+        <Appbar.Action
+          icon="menu"
+          onPress={() => console.log("Pressed archive")}
+        />
+        <Appbar.Content
+          title={<Text style={{ color: "white" }}>Forecasts</Text>}
+          style={{ alignItems: "center" }}
+        />
+        <Appbar.Action
+          icon="cog"
+          onPress={() => console.log("Pressed label")}
+        />
+      </Appbar>
+      <CountryList />
+    </div>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
